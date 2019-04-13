@@ -12,10 +12,25 @@ def load_library(path)
    hash
  end
 
-def get_japanese_emoticon
-  # code goes here
+def get_japanese_emoticon(path, emoticon)
+
+   dictionary = load_library(path)
+
+   response = dictionary["get_emoticon"][emoticon]
+
+   response ||= "Sorry, that emoticon was not found"
+
+   response
 end
 
-def get_english_meaning
+def get_english_meaning(path, emoticon)
+
+   dictionary = load_library(path)
+
+   response = dictionary["get_meaning"][emoticon]
+
+   response ||= "Sorry, that emoticon was not found"
+
+   response
   # code goes here
 end
